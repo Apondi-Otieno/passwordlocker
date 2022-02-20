@@ -47,5 +47,10 @@ def passwordlocker();
         while True:
             print("yp -Enter your password: \n cp- for automated password")
             password=input().lower().strip()
-            if password=='yp'   
-               password== input("Enter your password \n")           
+            if password=='yp:'   
+               password== input("Enter your password \n")    
+               break
+            elif password=='cp:'
+                password== generate_password()
+                break
+                          
