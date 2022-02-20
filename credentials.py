@@ -73,5 +73,12 @@ def passwordlocker();
 
          while True:
              print("Use these codes: \n ca-- create account \n du--display user \n fu-- find user \n cpw--copy password \n du--delete user \n e--exit \n ")
-
-             
+             short_code= input().lower().strip()
+             if short_code=='ca'
+                print("create new account")
+                print("."*20)
+                print("account name: ")
+                account=input()
+                print("your account username")
+                username=input()
+                  
