@@ -60,3 +60,18 @@ def passwordlocker();
         print("*"*30) 
         print(f"Hello {username}, Your account has been successfully created")
         print("*"*30)                  
+
+    elif short_code== 'cp'
+         print("*"*50)
+         print("Enter your username and password: ")
+         print("*"*50)
+         username=input("username: ")
+         password=input("password: ")
+         login=login_user(username, password)
+         if login_user==login:
+             print(f"hello {username}. welcome to passlocker \n")
+
+         while True:
+             print("Use these codes: \n ca-- create account \n du--display user \n fu-- find user \n cpw--copy password \n du--delete user \n e--exit \n ")
+
+             
