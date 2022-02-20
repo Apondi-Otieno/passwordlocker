@@ -21,5 +21,8 @@ def create_user(account, username, password):
 
 def save_user(user):
     user.save_details()
+
+def display_user():
+    return Credentials.display_user()
     
-        
+            
