@@ -24,5 +24,9 @@ def save_user(user):
 
 def display_user():
     return Credentials.display_user()
-    
-            
+
+def delete_user(user):
+    user.delete_user()
+
+def find_user(account):
+    return Credentials.find_user(account)    
