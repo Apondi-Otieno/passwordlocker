@@ -29,4 +29,9 @@ def delete_user(user):
     user.delete_user()
 
 def find_user(account):
-    return Credentials.find_user(account)    
+    return Credentials.find_user(account) 
+
+def user_exists(account):
+    return Credentials.if_user_exists(account)
+
+def           
