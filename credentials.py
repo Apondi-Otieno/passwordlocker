@@ -54,4 +54,9 @@ def passwordlocker();
                 password== generate_password()
                 break
             else:
-                print("Please enter valid password")              
+                print("Please enter valid password")   
+
+        save_user(new_user(username, password))
+        print("*"*30) 
+        print(f"Hello {username}, Your account has been successfully created")
+        print("*"*30)                  
