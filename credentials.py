@@ -81,4 +81,20 @@ def passwordlocker();
                 account=input()
                 print("your account username")
                 username=input()
-                  
+                while True:
+                    print("yp -Enter your password: \n cp- for automated password") 
+                    password=input().lower().strip()
+                    if password== 'yp':
+                        password=input("enter your password \n")
+                        break
+                    elif password== 'cp'    
+                          password=generate_password()
+                          break
+                    else:
+                        print("please enter valid password")      
+
+                save_user(new_user(account,username, password))        
+                print('\n')
+                print(f"account details for : {account}- username: {username}- password: {password}")
+                print('\n')
+                
