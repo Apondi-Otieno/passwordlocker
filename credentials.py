@@ -53,4 +53,5 @@ def passwordlocker();
             elif password=='cp:'
                 password== generate_password()
                 break
-                          
+            else:
+                print("Please enter valid password")              
