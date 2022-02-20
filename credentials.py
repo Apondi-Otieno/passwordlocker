@@ -36,5 +36,16 @@ def user_exists(account):
 
 def generate_password():
     return Credentials.copy_password(account)
-    
-               
+
+def passwordlocker();
+    print("welcome to password locker. \n To proceed, choose \n Acc --Create account Log -- To log in") 
+    short_code=input("").lower().strip()
+    if short_code=="Acc":
+        print("Sign up")
+        print('@' *30)
+        username=input("Enter your username: ")
+        while True:
+            print("yp -Enter your password: \n cp- for automated password")
+            password=input().lower().strip()
+            if password=='yp'   
+               password== input("Enter your password \n")           
