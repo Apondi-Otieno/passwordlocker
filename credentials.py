@@ -34,4 +34,7 @@ def find_user(account):
 def user_exists(account):
     return Credentials.if_user_exists(account)
 
-def           
+def generate_password():
+    return Credentials.copy_password(account)
+    
+               
