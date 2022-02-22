@@ -1,6 +1,4 @@
-MIT License
-
-Copyright (c) 2022 Apondi Otieno# passwordlocker
+# passwordlocker
 this is an application that enables the user to create and store passwords. 
 
 # Author
@@ -17,7 +15,7 @@ cd myProject and write the command below to clone repository
 git clone https://github.com/Apondi-Otieno/passwordlocker
 you already have the Quotes application in your local machine
 
-#LICENSE
+# LICENCE
 MIT License
 
 Copyright (c) 2022 Apondi Otieno
