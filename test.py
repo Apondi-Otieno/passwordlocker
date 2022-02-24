@@ -106,11 +106,6 @@ class TestCredentials(unittest.TestCase):
         """  
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)  
         
-    def test_copy_password(self):
-        self.new_credentials.save_details()
-        Credentials.copy_password('pentatonix')
-        self.assertEqual(self.new_credentials.password,pyperclip.paste())
-                       
 
 
 
@@ -120,7 +115,8 @@ class TestCredentials(unittest.TestCase):
 
 
 
-if __name__ == "__main__":
-    unittest.main()
+
+# if __name__ == "__main__":
+#     unittest.main()
         
      
