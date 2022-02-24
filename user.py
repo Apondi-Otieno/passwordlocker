@@ -1,115 +1,119 @@
-#BDD
-# 
-#  Create a username and password
-#  Record The name of the user
-#  save the username and password
-#  create new account inpt new username and password
-#  generate new password or create a new one
-#  view accounts and respective passwords
-#  delete accounts no longer in use
-# 
-# 
-
 import random
-import pyperclip
 import string
+import pyperclip
 
-# user class
-
-class user:
-
+class User:
+    """
+    Create User class that generates new instances of user.
+    """
+    
     user_list = []
-
-def __init__(self, username,password):
+    
+    def __init__(self,username,password):
+        """
+        method that defines the properties of a user.
+        
+        """
+        
         self.username = username
-        self.password = password
-
-# this will save new user details
-
-def save_user(self):
-
-      user.user_list.append(self)
-
-@classmethod
-
-#this will display user details
-
-def display_user(cls):
-          return cls.user_list
-
-#this will delete user details
-
-def delete_user(self):
-        user.user_list.remove(self)
-
-
-# new class
-
+        self.password =password
+        
+    def save_user(self):
+        """
+        A method that saves a new user instance into the user list
+        """  
+        User.user_list.append(self)   
+    @classmethod
+    def display_user(cls):
+        return cls.user_list
+    
+    def delete_user(self):
+        """
+        delete_user method deletes a waved user account from the list
+        
+        """
+        User.user_list.remove(self)
+        
 class Credentials():
-
-    credentials_list = []
-
-@classmethod
-def verify_user(cls,username,password):
-
+    """
+    Create credentials class to help create new objects of credentials
+    
+    """    
+    credentials_list =[]
+    
+    @classmethod
+    def verify_user(cls,username,password):
+        """
+        method to verify whether the user is in our user_list or not
+        """
         a_user =""
-for user in User.user_list:
-    if(user,username==username and user.password==password):
-        a_user==user.username
-        return a_user
-
-
-# storing user details
-def __init__(self,account,username,password):
-
-            self.account = account
-            self.username = username
-            self.password = password
-
-def save_details(self):
-
-            Credentials.credentials_list.append(self)
-
-def delete_credentials(self):
-
-            Credentials.credentials_list.remove(self)
-
-@classmethod
- # this method takes in account name and returns a matching password
-
-def find_credentials(cls,account):
-            for Credentials in cls.credentials_list:
-              if credential.account == account:
-                 return credential
-
-@classmethod
-#this method will let the user copy the passwords from
-
-def copy_password(cls,account):
-    found_credentials =Credentials.find_credentials(account)
-    pyperclip.copy(found_credentials.password)
-    password_copied=pyperclip.paste()
-    print (password_copied)
-
-
-@classmethod
-# this method checks whether the account of the user exists
-
-def if_credentials_exist(cls,account):
-    for credential in cls.credential_list:
-        if credential.account == account:
-            return True
+        for user in User.user_list:
+            if(user.username == username and user.password ==password):
+                a_user ==user.username
+        return a_user        
+    
+    def __init__(self,account,userName,password) :
+        """
+        method that defines user credentials to be stored
+        
+        """    
+        self.account =account
+        self.userName =userName
+        self.password =password
+        
+    def save_details(self):
+        """
+        method to store a new credentials to the credentials list
+        """   
+        Credentials.credentials_list.append(self)
+        
+    def delete_credentials(self):
+        """
+        delete_credentials method that deletes an account credentials from credential_list
+        """    
+        Credentials.credentials_list.remove(self)
+        
+    @classmethod
+    def find_credentialls(cls,account):
+        """
+        method that takes in account_name and returns a credentials that match account name
+        """  
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return credential
+            
+    @classmethod
+    def copy_password(cls,account):
+        found_credentials =Credentials.find_credentialls(account)
+        pyperclip.copy(found_credentials.password)
+        password_copied = pyperclip.paste()
+        print(password_copied)  
+        pyperclip.paste()
+        
+    @classmethod
+    def if_credential_exist(cls,account):
+        """
+         method that checks if a credential exists from the crdential list and returns true or false depending if the credential exists.
+        """ 
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return True
         return False
-
-
-@classmethod
-# this method displays the credentials of the user
-
-def display_credentials(cls):
-    return cls.credential_list
-
-# this will generate a password for the user
-def generate_password(stringLength=None):
-
-    password = string.ascii_uppercase+ string.ascii_lowercase+ string.digits+ "@#$%"
-    return''.join(random.choice(password) for i in range(stringLength))
+        
+        
+    @classmethod
+    def display_credentials(cls):
+        """
+        method that returns all items in credential list
+        """ 
+        return cls.credentials_list
+    
+    def generated_password(stringLength=8):
+        """
+        Generate a random password string of letters and digits and special characters
+        """   
+        password = string.ascii_uppercase +string.ascii_lowercase +string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))
+                     
+            
+        
