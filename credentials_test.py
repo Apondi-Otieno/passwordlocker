@@ -1,69 +1,45 @@
 from cgi import test
-import unittest
-
-import pyperclip
 from user import User
 from user import Credentials
-
-class TestClass(unittest.TestCase):
-    """
-    A Test class that defines test cases for the User class 
-    """
-    def setUp(self) :
-        """
-        method that runs before each individual test method run
-        """
-        self.new_user =User('apondi','pentatonix')
-        
-    def test_init(self):
-        """
-        test case to check if object has been initialized correctly
-        """  
-        self.assertEqual(self.new_user.username, 'apondi')  
-        self.assertEqual(self.new_user.password,'pentatonix')
-        
-    def test_save_user(self):
-        """
-        test case to test if new user instance has been saved
-        """ 
-        self.new_user.save_user()
-        self.assertEqual(len(User.user_list),1)   
+import unittest
+import pyperclip
 
 
 class TestCredentials(unittest.TestCase):
-    """
-    Test case for credentential model class
-    """   
+    '''
+    credentential model class test
+    ''' 
     
     def setUp(self):
-        """
-        Method that runs before each credential test case runs
-        """  
+        '''
+        this Method runs before each credential case
+        ''' 
         self.new_credentials =Credentials('instagram','apondi','pentatonix')  
         
     def test_init(self):
         """
-        test case to check if new credentials have ben initialized correctly
+         check if new credentials are initialized correctly
         """ 
         self.assertEqual(self.new_credentials.account,'instagram') 
         self.assertEqual(self.new_credentials.userName,'apondi') 
         self.assertEqual(self.new_credentials.password,'pentatonix') 
+        
     def save_credential_test(self):
         """
-        test case to see if credentials have been saved
+        check if credentials are saved
         """ 
         self.new_credentials.save_details()
         self.assertEqual(len(Credentials.credentials_list),1)
         
     def tearDown(self):
         """
-        method that does clean up after test case has run
+        method that cleans up after test cases have run
         """
         Credentials.credentials_list =[]
         
-    def test_save_many_accounts(self):
+    def test_many_accounts(self):
         """
-        Test to check if we can save multiple account credentials
+        saving multiple account credentials
         """   
         self.new_credentials.save_details()
         test_credential =Credentials("facebook","apondi",'pentatonix') 
@@ -72,16 +48,17 @@ class TestCredentials(unittest.TestCase):
     
     def test_delete_credential(self):
         """
-        test method to test whether we can delete credentials
+        tests whether we can delete credentials
         """ 
         self.new_credentials.save_details()
         test_credential =Credentials("facebook","apondi",'pentatonix')
         test_credential.save_details()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+        
     def test_find_credentials(self):
         """
-        test to check if we can find a credential by account name and display details
+        checks if we can find a credential by account name and display details
         """ 
         self.new_credentials.save_details()
         test_credential =Credentials("facebook","apondi","pentatonix")
@@ -92,7 +69,7 @@ class TestCredentials(unittest.TestCase):
         
     def test_credential_exist(self):
         """
-        test method to test if credentials exists
+        tests if credentials exists
         """ 
         self.new_credentials.save_details()
         test_credential =Credentials("facebook","apondi",'pentatonix')
@@ -100,23 +77,24 @@ class TestCredentials(unittest.TestCase):
         credentials_found =Credentials.if_credential_exist("facebook")
         self.assertTrue(credentials_found) 
         
-    def test_display_all_saved_credentials(self):
+    def test_display_credentials(self):
         """
-        test to display all credentials
+        displays credentials
         """  
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)  
-        
-
-
-
-
-
-
-
-
-
+     
+    def test_copy_password(self):    
+       ''' 
+       test to display copied password
+       '''
+       
+       
+     
 
 if __name__ == "__main__":
     unittest.main()
-        
-     
+
+
+
+
+
